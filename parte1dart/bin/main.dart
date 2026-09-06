@@ -1,5 +1,9 @@
+import 'dart:vmservice_io';
+
 import 'models/animal.dart';
-import 'models/animalInternado.dart';
+import 'models/animal_internado.dart';
+import 'models/clinica.dart';
+
 
 void main() {
 
@@ -12,7 +16,7 @@ void main() {
     
     );
   
-  final Mimi = AnimalInternado(
+  final mimi = AnimalInternado(
 
     nome: 'Mimi',
     especie: 'Gato',
@@ -23,8 +27,19 @@ void main() {
     dataInternacao: DateTime.now()
 
   );
+
+  final clinica1 = Clinica(nome: 'Matriz');
+
+  clinica1.adicionar(Animal(nome: 'Robson', especie: 'Gato', idade: 8, dataCadastro: DateTime.now()));
+  clinica1.adicionar(Animal(nome: 'Lola', especie: 'Cachorro', idade: 5, dataCadastro: DateTime.now()));
   
   print(rex.ficha());
-  print(Mimi.ficha());
+  print(mimi.ficha());
+  print('${clinica1.nome} tem ${clinica1.pacientes.length} internados:');
+  for (final animal in clinica1.pacientes) {
+
+    print('- ${animal.nome}');
+
+  }
   
 }

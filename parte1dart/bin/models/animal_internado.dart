@@ -1,4 +1,3 @@
-// ignore: file_names
 import 'animal.dart';
 
 class AnimalInternado extends Animal{
