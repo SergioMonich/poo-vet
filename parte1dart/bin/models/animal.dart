@@ -12,7 +12,7 @@ class Animal {
 
     required this.nome,
     required this.especie,
-    required  this.idade,
+    required this.idade,
     this.peso = 0.0,
     required this.dataCadastro,
 
