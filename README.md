@@ -10,15 +10,15 @@ lista de animais cadastrados.
 
 ## Tabela de rastreio
 
-| #  | Exercício               | Arquivo e linha                     | O que aparece na tela                             |
-|----|-------------------------|-------------------------------------|---------------------------------------------------|
-| 01 | Entidade principal      | parte1dart/bin/models/animal.dart:1 | Nome do animal impresso no bloco [1] do relatório |
-| 02 | Herança                 |                                     |                                                   |
-| 03 | Composição              |                                     |                                                   |
-| 04 | Encapsulamento          |                                     |                                                   |
-| 05 | Estrutura de tela       |                                     |                                                   |
-| 06 | Cartão                  |                                     |                                                   |
-| 07 | Lista                   |                                     |                                                   |
-| 08 | Navegação               |                                     |                                                   |
-| 09 | Formulário              |                                     |                                                   |
-| 10 | Estado                  |                                     |                                                   |
+| #  | Exercício               | Arquivo e linha                               | O que aparece na tela                                                |
+|----|-------------------------|-----------------------------------------------|----------------------------------------------------------------------|
+| 01 | Entidade principal      | parte1dart/bin/models/animal.dart:1           | Nome do animal impresso no bloco [1] do relatório                    |
+| 02 | Herança                 | parte1dart/bin/models/animalInternado.dart:24 | Ficha do Animal e do AnimalInternado, uma abaixo da outra, bloco [2] |
+| 03 | Composição              |                                               |                                                                      |
+| 04 | Encapsulamento          |                                               |                                                                      |
+| 05 | Estrutura de tela       |                                               |                                                                      |
+| 06 | Cartão                  |                                               |                                                                      |
+| 07 | Lista                   |                                               |                                                                      |
+| 08 | Navegação               |                                               |                                                                      |
+| 09 | Formulário              |                                               |                                                                      |
+| 10 | Estado                  |                                               |                                                                      |

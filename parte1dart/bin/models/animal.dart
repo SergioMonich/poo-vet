@@ -18,4 +18,11 @@ class Animal {
 
   });
 
+  //metodo ficha
+  String ficha() {
+
+    return '$nome, $idade anos';
+
+  }
+
 }
