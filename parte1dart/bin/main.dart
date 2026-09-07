@@ -5,6 +5,7 @@ import 'models/clinica.dart';
 
 void main() {
 
+  //instanciando um objeto
   final rex = Animal(
     
     nome: 'Rex', 
@@ -12,8 +13,9 @@ void main() {
     idade: 3, 
     dataCadastro: DateTime.now()
     
-    );
+  );
   
+  //instanciando um objeto com heranca
   final mimi = AnimalInternado(
 
     nome: 'Mimi',
@@ -26,65 +28,49 @@ void main() {
 
   );
 
+  //instanciando uma nova clinica
   final clinica1 = Clinica(nome: 'Matriz');
 
+  //instanciando objeto animal diretamente dentro da classe clinica (com um metodo para internar - animalinternado)
   clinica1.adicionar(Animal(nome: 'Robson', especie: 'Gato', idade: 8, dataCadastro: DateTime.now()));
   clinica1.adicionar(Animal(nome: 'Lola', especie: 'Cachorro', idade: 5, dataCadastro: DateTime.now()));
-  
-  print(rex.ficha());
-  print(mimi.ficha());
-  print('${clinica1.nome} tem ${clinica1.totalpacientes} internados:');
-  for (final animal in clinica1.paciente) {
-
-    print('- ${animal.nome}');
-
-  }
-  print('Total de pacientes: ${clinica1.totalpacientes}');
-
-  final raika = AnimalInternado(
-    
-    nome: 'Raika', 
-    especie: 'papagaio', 
-    idade: 4, 
-    dataCadastro: DateTime.now(), 
-    baia: 'B7', dataInternacao: 
-    DateTime.now()
-  
-  );
-
-  print(raika.ficha());
-
   clinica1.adicionar(Animal(nome: 'Lili', especie: 'peixe', idade: 1, dataCadastro: DateTime.now()));
 
-  print('${clinica1.nome} tem ${clinica1.totalpacientes} internados:');
+  //bloco 1  - entidade principal
+  print('====BLOCCO 01 - ENTIDADE PRINCIPAL====');
+  print('Animal -- Nome: ${rex.nome} -- Especie: ${rex.especie} -- Idade: ${rex.idade} -- Peso: ${rex.peso}');
+  print('');
+
+  //bloco 2 - herança
+  print('====BLOCCO 02 - HERANÇA====');
+  print('Animal comum -> ${rex.ficha()}');
+  print('Animal internado -> ${mimi.ficha()}');
+  print('');
+
+  //bloco 3 - composicao
+  print('====BLOCCO 03 - COMPOSIÇAO====');
+  print('${clinica1.nome} tem ${clinica1.totalpacientes} animais internados:');
   for (final animal in clinica1.paciente) {
 
     print('- ${animal.nome}');
 
   }
-  print('Total de pacientes: ${clinica1.totalpacientes}');
+  print('');
 
+  //bloco 4 - encapsulamento
+  print('===== [4] ENCAPSULAMENTO =====');
+  print('Clínica "${clinica1.nome}" -> total de pacientes (calculado): ${clinica1.totalpacientes}');
   final jubileu = AnimalInternado(
-
-    nome: 'jubileu',
-    especie: 'hamister',
-    idade: 3,
+    nome: 'Jubileu',
+    especie: 'Hamster',
+    idade: 1,
     peso: 0.4,
     dataCadastro: DateTime.now(),
     baia: 'B4',
-    dataInternacao: DateTime.now()
-
+    dataInternacao: DateTime.now(),
   );
-
   clinica1.adicionar(jubileu);
-
-  print('${clinica1.nome} tem ${clinica1.totalpacientes} internados:');
-  for (final animal in clinica1.paciente) {
-
-    print('- ${animal.nome}');
-
-  }
-  print('Total de pacientes: ${clinica1.totalpacientes}');
+  print('Após adicionar "${jubileu.nome}": ${clinica1.totalpacientes}');
   
 }
 
