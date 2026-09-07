@@ -71,6 +71,12 @@ void main() {
   );
   clinica1.adicionar(jubileu);
   print('Após adicionar "${jubileu.nome}": ${clinica1.totalpacientes}');
+  for (final animal in clinica1.paciente) {
+
+    print('- ${animal.nome}');
+
+  }
+  print('');
   
 }
 
