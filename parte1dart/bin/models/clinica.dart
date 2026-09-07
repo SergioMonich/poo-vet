@@ -2,9 +2,9 @@ import 'animal.dart';
 
 class Clinica {
 
-  //atreibutos
+  //atreibutos. Lista com atributo privado ("_")
   String nome;
-  List<Animal> pacientes = [];
+  List<Animal> _pacientes = [];
 
   //construtor
   Clinica({
@@ -15,8 +15,14 @@ class Clinica {
 
   void adicionar(Animal animal){
 
-    pacientes.add(animal);
+    _pacientes.add(animal);
 
   }
+
+  //getter com arrow function usado para encurtar o codigo. Poderia ser { retrurn _pacientes;}
+  List<Animal> get paciente => _pacientes;
+  
+  //gertter calculado, atualziado a cda nova adicao de um elemento na lista
+  int get totalpacientes => _pacientes.length;
 
 }

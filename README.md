@@ -21,7 +21,7 @@ porque todo animal internado também é um animal, só que com dados extras.
 | 01 | Entidade principal | parte1dart/bin/models/animal.dart:1           | Nome do animal impresso no bloco [1] do relatório                       |
 | 02 | Herança            | parte1dart/bin/models/animalInternado.dart:24 | Ficha do Animal e do AnimalInternado, uma abaixo da outra, bloco [2]    |
 | 03 | Composição         | parte1dart/bin/models/clinica.dart:16         | Total de pacientes e lista de nomes impressos no bloco [3] do relatório |
-| 04 | Encapsulamento     |                                               |                                                                         |
+| 04 | Encapsulamento     | parte1dart/bin/models/clinica.dart:7          | Total antes e depois de adicionar impresso no bloco [4]                 |
 | 05 | Estrutura de tela  |                                               |                                                                         |
 | 06 | Cartão             |                                               |                                                                         |
 | 07 | Lista              |                                               |                                                                         |
