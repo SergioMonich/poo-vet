@@ -23,8 +23,8 @@ porque todo animal internado também é um animal, só que com dados extras.
 | 03 | Composição         | parte1dart/bin/models/clinica.dart:16                   | Total de pacientes e lista de nomes impressos no bloco [3] do relatório |
 | 04 | Encapsulamento     | parte1dart/bin/models/clinica.dart:7                    | Total antes e depois de adicionar impresso no bloco [4]                 |
 | 05 | Estrutura de tela  | parte2flutter/lib/screens/home_page.dart:13             | AppBar com nome da clínica e total de pacientes no topo                 |
-| 06 | Cartão             | parte2flutter/lib/screens/widgets/cartao_animal.dart:16 | Cada item da lista desenhado como cartão                                |
+| 06 | Cartão             | parte2flutter/lib/screens/widgets/cartao_animal.dart:12 | Cada item da lista desenhado como cartão                                |
 | 07 | Lista              | parte2flutter/lib/screens/home_page.dart:44             | Lista rolável com 6 cartões de animais                                  |
-| 08 | Navegação          |                                                         |                                                                         |
+| 08 | Navegação          | parte2flutter/lib/screens/widgets/cartao_animal.dart:18 | Toque no cartão abre a tela de detalhe do animal                        |
 | 09 | Formulário         |                                                         |                                                                         |
 | 10 | Estado             |                                                         |                                                                         |
