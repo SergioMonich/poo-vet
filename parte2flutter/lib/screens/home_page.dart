@@ -4,31 +4,46 @@ import '../models/animal_internado.dart';
 import '../models/clinica.dart';
 
 class HomePage extends StatelessWidget {
+  
   HomePage({super.key});
 
   final Clinica clinica = _criarClinicaComPacientes();
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
+      
       appBar: AppBar(
+        
         title: Text(clinica.nome),
+
       ),
+
       body: Column(
+        
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          
           Padding(
+            
             padding: const EdgeInsets.all(16),
             child: Text(
+              
               'Total de pacientes: ${clinica.totalpacientes}',
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+
             ),
+
           ),
-          
+
         ],
+
       ),
+
     );
+    
   }
 }
 
