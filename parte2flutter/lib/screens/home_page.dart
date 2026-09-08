@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/animal.dart';
 import '../models/animal_internado.dart';
 import '../models/clinica.dart';
+import 'widgets/cartao_animal.dart';
 
 class HomePage extends StatelessWidget {
   
@@ -31,8 +32,24 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Text(
               
-              'Total de pacientes: ${clinica.totalpacientes}',
+              'Total de pacientes: ${clinica.totalPacientes}',
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+
+            ),
+
+          ),
+
+          Expanded(
+            
+            child: ListView.builder(
+              
+              itemCount: clinica.totalPacientes,
+              itemBuilder: (context, index) {
+                
+                final animal = clinica.pacientes[index];
+                return CartaoAnimal(animal: animal);
+
+              },
 
             ),
 
@@ -43,11 +60,13 @@ class HomePage extends StatelessWidget {
       ),
 
     );
-    
+
   }
+
 }
 
 Clinica _criarClinicaComPacientes() {
+  
   final clinica = Clinica(nome: 'Clínica Pata Feliz');
 
   clinica.adicionar(Animal(nome: 'Rex', especie: 'Cachorro', idade: 3, peso: 12.5, dataCadastro: DateTime.now()));
@@ -58,4 +77,5 @@ Clinica _criarClinicaComPacientes() {
   clinica.adicionar(AnimalInternado(nome: 'Jubileu', especie: 'Hamster', idade: 1, peso: 0.4, dataCadastro: DateTime.now(), baia: 'B4', dataInternacao: DateTime.now()));
 
   return clinica;
+
 }

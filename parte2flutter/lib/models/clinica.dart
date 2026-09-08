@@ -20,9 +20,9 @@ class Clinica {
   }
 
   //getter com arrow function usado para encurtar o codigo. Poderia ser { retrurn _pacientes;}
-  List<Animal> get paciente => _pacientes;
+  List<Animal> get pacientes => _pacientes;
   
   //gertter calculado, atualziado a cda nova adicao de um elemento na lista
-  int get totalpacientes => _pacientes.length;
+  int get totalPacientes => _pacientes.length;
 
 }
