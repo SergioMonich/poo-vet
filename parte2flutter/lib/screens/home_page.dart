@@ -3,35 +3,66 @@ import '../models/animal.dart';
 import '../models/animal_internado.dart';
 import '../models/clinica.dart';
 import 'widgets/cartao_animal.dart';
+import 'cadastro_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   
-  HomePage({super.key});
+  const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  
   final Clinica clinica = _criarClinicaComPacientes();
+
+  void _abrirCadastro() async {
+    
+    final novoAnimal = await Navigator.of(context).push<Animal>(
+      
+      MaterialPageRoute(
+        
+        builder: (context) => const CadastroPage(),
+
+      ),
+
+    );
+
+    if (novoAnimal != null) {
+      
+      setState(() {
+      
+        clinica.adicionar(novoAnimal);
+
+      });
+
+    }
+
+  }
 
   @override
   Widget build(BuildContext context) {
     
     return Scaffold(
-      
+    
       appBar: AppBar(
-        
+    
         title: Text(clinica.nome),
 
       ),
-
+      
       body: Column(
-        
+      
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          
+      
           Padding(
-            
+      
             padding: const EdgeInsets.all(16),
             child: Text(
-              
+      
               'Total de pacientes: ${clinica.totalPacientes}',
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
 
@@ -42,10 +73,10 @@ class HomePage extends StatelessWidget {
           Expanded(
             
             child: ListView.builder(
-              
+            
               itemCount: clinica.totalPacientes,
               itemBuilder: (context, index) {
-                
+            
                 final animal = clinica.pacientes[index];
                 return CartaoAnimal(animal: animal);
 
@@ -56,6 +87,13 @@ class HomePage extends StatelessWidget {
           ),
 
         ],
+
+      ),
+
+      floatingActionButton: FloatingActionButton(
+      
+        onPressed: _abrirCadastro,
+        child: const Icon(Icons.add),
 
       ),
 
@@ -77,5 +115,5 @@ Clinica _criarClinicaComPacientes() {
   clinica.adicionar(AnimalInternado(nome: 'Jubileu', especie: 'Hamster', idade: 1, peso: 0.4, dataCadastro: DateTime.now(), baia: 'B4', dataInternacao: DateTime.now()));
 
   return clinica;
-
+  
 }
