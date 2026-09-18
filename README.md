@@ -28,3 +28,31 @@ porque todo animal internado também é um animal, só que com dados extras.
 | 08 | Navegação          | parte2flutter/lib/screens/widgets/cartao_animal.dart:18 | Toque no cartão abre a tela de detalhe do animal                        |
 | 09 | Formulário         | parte2flutter/lib/screens/cadastro_page.dart:12         | Tela de cadastro com nome, espécie e idade                              |
 | 10 | Estado             | parte2flutter/lib/screens/home_page.dart:20             | Roberto aparece na lista e total muda de 6 para 7                       |
+
+## Como rodar o projeto
+
+Pré-requisitos: Flutter SDK instalado e disponível no PATH (o Dart vem junto).
+Para conferir: `flutter --version`
+
+### Parte 1 — Dart puro
+
+Imprime no terminal o relatório com os quatro blocos (entidade principal,
+herança, composição e encapsulamento).
+
+```bash
+cd parte1dart
+dart run bin/main.dart
+```
+
+### Parte 2 — Flutter
+
+Abre o aplicativo da clínica, já com seis pacientes cadastrados.
+
+```bash
+cd parte2flutter
+flutter pub get
+flutter run -d chrome
+```
+
+O parâmetro `-d chrome` roda o app no navegador. Para rodar em um emulador
+ou dispositivo Android, use `flutter run` e escolha o dispositivo na lista.
